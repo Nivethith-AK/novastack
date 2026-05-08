@@ -1,136 +1,119 @@
-# NovaStack Landing
+# NIVI Energy Drink
 
-Production-grade marketing site for NovaStack AI, built with Next.js App Router, React, TypeScript, and Tailwind CSS.
+A bold, modern landing page for an energy drink brand. The site uses a deep charcoal base, vibrant pink accents, smooth motion, and a premium product-first layout designed to feel polished on GitHub and in the browser.
 
-This repository delivers a modular, section-based landing experience focused on product narrative, technical credibility, and conversion.
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Core Capabilities](#core-capabilities)
-- [Technology Stack](#technology-stack)
-- [Architecture](#architecture)
-- [Local Development](#local-development)
-- [NPM Scripts](#npm-scripts)
-- [Quality and Build Notes](#quality-and-build-notes)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
+[![Next.js](https://img.shields.io/badge/Next.js-16.0.10-black?logo=nextdotjs)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.2.0-61dafb?logo=react&logoColor=white)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-v4-38bdf8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer%20Motion-12.x-ff0055)](https://www.framer.com/motion/)
+[![Vercel](https://img.shields.io/badge/Deployed%20with-Vercel-black?logo=vercel)](https://vercel.com/)
 
 ## Overview
 
-NovaStack Landing is a component-driven web experience composed of reusable section modules. The page is assembled in a clear top-to-bottom narrative: navigation, hero, feature depth, technical proof points, developer relevance, and final call-to-action.
+NIVI Energy Drink is a marketing site built with the Next.js App Router. It includes an animated hero, product carousel, feature cards, community/feed sections, and a social call-to-action footer. The layout is already opinionated and production-shaped, so the main things you will usually change are the brand name, colors, images, and copy.
 
-## Core Capabilities
+## Features
 
-- App Router-based composition with predictable structure
-- Reusable UI primitives powered by Radix-based components
-- Tailwind CSS v4 design system workflow
-- Analytics instrumentation via Vercel Analytics
-- Font stack that combines readability and technical brand character
-- Animated ASCII visual components for distinctive identity
+- Animated hero section with a floating hero product shot
+- Product carousel for flavor or variant storytelling
+- Bento-style feature grid with motion and hover states
+- Community and Instagram-style visual feed sections
+- Smooth scrolling and subtle interaction effects
+- Responsive layout for desktop and mobile
+- Clean component structure for quick branding updates
 
-## Technology Stack
+## Homepage Preview
 
-| Layer | Technology |
-| --- | --- |
-| Framework | Next.js 16 |
-| UI Runtime | React 19 |
-| Language | TypeScript 5 |
-| Styling | Tailwind CSS 4 |
-| UI Primitives | Radix UI |
-| Icons | Lucide React |
-| Forms/Validation | React Hook Form + Zod |
-| Analytics | @vercel/analytics |
+![NIVI Energy Drink homepage preview](public/homepage.png)
 
-## Architecture
+The preview above is a live screenshot captured from the current local build.
 
-```text
-app/
-  layout.tsx              # Metadata, fonts, root shell, analytics
-  page.tsx                # Landing page composition entrypoint
-  globals.css             # Global styles for app layer
-components/
-  landing/                # Marketing sections and ASCII visual modules
-  ui/                     # Shared UI primitives
-hooks/                    # Shared client hooks
-lib/
-  utils.ts                # Generic utility helpers
-public/                   # Static assets (icons, images)
-styles/
-  globals.css             # Additional global style definitions
-```
+## Tech Stack
 
-## Local Development
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- Framer Motion
+- Lenis
+- Vercel Analytics
 
-### Prerequisites
+## Getting Started
 
-- Node.js 20 or newer
-- pnpm 9 or newer
-
-### Install Dependencies
+Install dependencies:
 
 ```bash
-pnpm install
+npm install
 ```
 
-### Start Development Server
+Run the development server:
 
 ```bash
-pnpm dev
+npm run dev
 ```
 
-Application URL: http://localhost:3000
-
-## NPM Scripts
-
-| Command | Purpose |
-| --- | --- |
-| `pnpm dev` | Start Next.js development server |
-| `pnpm build` | Create production build |
-| `pnpm start` | Run production server |
-| `pnpm lint` | Run ESLint across the codebase |
-
-## Quality and Build Notes
-
-Current build behavior is defined in `next.config.mjs`:
-
-- `typescript.ignoreBuildErrors` is set to `true`
-- `images.unoptimized` is set to `true`
-
-Implications:
-
-- Production builds currently do not fail on TypeScript errors
-- Next.js image optimization pipeline is bypassed
-
-Recommendation for stricter production quality:
-
-1. Set `typescript.ignoreBuildErrors` to `false`
-2. Re-enable image optimization if deployment target supports it
-3. Add a CI gate that runs `pnpm lint` and `pnpm build`
-
-## Deployment
-
-### Vercel (Recommended)
-
-1. Import the repository into Vercel.
-2. Keep the default Next.js build settings.
-3. Deploy.
-
-### Self-Hosted / Manual
+Run on a different port:
 
 ```bash
-pnpm build
-pnpm start
+npm run dev -- -p 3001
 ```
 
-## Contributing
+Build for production:
 
-1. Create a branch from `main`.
-2. Keep changes scoped to a single concern.
-3. Validate locally with lint and build checks.
-4. Open a pull request with a concise technical summary.
+```bash
+npm run build
+```
+
+Start the production server:
+
+```bash
+npm run start
+```
+
+Run linting:
+
+```bash
+npm run lint
+```
+
+## Project Structure
+
+- `app/` - App Router pages, root layout, and global styles
+- `components/` - Landing page sections and reusable UI pieces
+- `hooks/` - Shared React hooks
+- `lib/` - Utility helpers
+- `public/` - Static assets such as product and lifestyle images
+- `styles/` - Global stylesheet source
+
+## Customization Guide
+
+If you want to rebrand the site, start here:
+
+- `app/layout.tsx` - page title, metadata, and theme color
+- `app/globals.css` - global design tokens and color system
+- `components/hero-section.tsx` - hero copy and product image
+- `components/flavor-carousel.tsx` - variant cards and carousel content
+- `components/lifestyle-section.tsx` - social-style image grid and captions
+- `components/social-section.tsx` - Instagram-style gallery and CTA
+- `public/` - replace product photos and lifestyle images
+
+## Content Notes
+
+- The site is currently branded as NIVI Energy Drink.
+- Local development was verified on port `3001`.
+- The gallery assets in `public/` are already wired into the feed sections.
+- You can replace the product image set without changing the component structure.
+
+## Suggested Improvements
+
+If you want to take the README even further, add any of the following:
+
+- A short deployment section for Vercel or GitHub Pages
+- Brand color tokens with hex values
+- A section showing where to edit text and images
+- A live demo link once deployed
 
 ## License
 
-This repository is currently private. Add a formal license before public distribution.
+This project is ready to use as a custom landing page template. Add your preferred license before publishing publicly.
